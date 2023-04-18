@@ -22,7 +22,7 @@ def transcribe(video_in, output_dir, model, language, task, subs):
     execute(stream, desc=f"Converting {video_in.name} to {audio_file}...")
 
     gpu = torch.cuda.is_available()
-    model = whisper.load_model(model)
+    model = whisper.load_model(model, device=None, download_root="/tmp/")
     result = model.transcribe(audio_file, task=task, language=language, verbose=True, fp16=gpu)
     writer = get_writer("srt", ".")
 
