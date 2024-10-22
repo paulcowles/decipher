@@ -8,7 +8,7 @@ setup(
         'openai-whisper==20230314',
         'click==8.1.3',
         'ffpb==0.4.1',
-        'tqdm'
+        'tqdm==4.65.0'
     ],
     packages=find_packages(),
     entry_points={
